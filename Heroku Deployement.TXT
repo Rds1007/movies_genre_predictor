@@ -1,0 +1,163 @@
+A. Down Load Heroku CLI 
+B. Down Laod Git CLI
+C. Create an APP in Heroku Site after creating accoint on Heroku
+
+Microsoft Windows [Version 10.0.18362.900]
+                                                   C:\Users\Ramdhan\PycharmProjects\Movies>
+C:\Users\Ramdhan\PycharmProjects\Movies>
+C:\Users\Ramdhan\PycharmProjects\Movies>heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https://cli-auth.heroku.com/auth/cli/browser/71c10bc9-95ef-4578-87cd-94c6e5a4b218
+Logging in... done
+Logged in as ramdhansharma@gmail.com
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git init
+Reinitialized existing Git repository in C:/Users/Ramdhan/PycharmProjects/Movies/.git/
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git:remote -a "movie-app-gen"
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Users\Ramdhan\PycharmProjects\Movies>heroku git:remote -a "movie-app-gen"
+set git remote heroku to https://git.heroku.com/movie-app-gen.git
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git add .
+warning: LF will be replaced by CRLF in app.py.
+The file will have its original line endings in your working directory
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git commit -a "initial-commit"
+fatal: paths 'initial-commit ...' with -a does not make sense
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git commit -am "initial commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Ramdhan@LAPTOP-OIC5HBBC.(none)')
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git config --global user.email "ramdhansharma@gmail.com"
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git config --global user.name "ramdhansharma@gmail.com"
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git commit -am "initial commit"
+[master (root-commit) 2835161] initial commit
+ 21 files changed, 23067 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 .idea/Movies.iml
+ create mode 100644 .idea/inspectionProfiles/profiles_settings.xml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 .idea/workspace.xml
+ create mode 100644 Movie Genre Predictor - Deployment.py
+ create mode 100644 Procfile
+ create mode 100644 README.md
+ create mode 100644 app.py
+ create mode 100644 cv-transform.pkl
+ create mode 100644 gitignore
+ create mode 100644 kaggle_movie_train.csv
+ create mode 100644 movie-genre-mnb-model.pkl
+ create mode 100644 readme_resources/predicting-genre-web-app.gif
+ create mode 100644 requirements.txt
+ create mode 100644 static/movie-favicon.ico
+ create mode 100644 static/styles.css
+ create mode 100644 templates/index.html
+ create mode 100644 templates/result.html
+
+C:\Users\Ramdhan\PycharmProjects\Movies>git push heroku master
+Enumerating objects: 28, done.
+Counting objects: 100% (28/28), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (28/28), 25.81 MiB | 831.00 KiB/s, done.
+Total 28 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote: -----> Installing python-3.6.10
+remote: -----> Installing pip
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting Flask==1.1.1
+remote:          Downloading Flask-1.1.1-py2.py3-none-any.whl (94 kB)
+remote:        Collecting gunicorn==19.9.0
+remote:          Downloading gunicorn-19.9.0-py2.py3-none-any.whl (112 kB)
+remote:        Collecting itsdangerous==1.1.0
+remote:          Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+remote:        Collecting Jinja2==2.10.1
+remote:          Downloading Jinja2-2.10.1-py2.py3-none-any.whl (124 kB)
+remote:        Collecting MarkupSafe==1.1.1
+remote:          Downloading MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl (27 kB)
+remote:        Collecting Werkzeug==0.15.5
+remote:          Downloading Werkzeug-0.15.5-py2.py3-none-any.whl (328 kB)
+remote:        Collecting numpy>=1.9.2
+remote:          Downloading numpy-1.18.5-cp36-cp36m-manylinux1_x86_64.whl (20.1 MB)
+remote:        Collecting scipy>=0.15.1
+remote:          Downloading scipy-1.4.1-cp36-cp36m-manylinux1_x86_64.whl (26.1 MB)
+remote:        Collecting scikit-learn>=0.18
+remote:          Downloading scikit_learn-0.23.1-cp36-cp36m-manylinux1_x86_64.whl (6.8 MB)
+remote:        Collecting matplotlib>=1.4.3
+remote:          Downloading matplotlib-3.2.1-cp36-cp36m-manylinux1_x86_64.whl (12.4 MB)
+remote:        Collecting pandas>=0.19
+remote:          Downloading pandas-1.0.4-cp36-cp36m-manylinux1_x86_64.whl (10.1 MB)
+remote:        Collecting nltk>=3.4.5
+remote:          Downloading nltk-3.5.zip (1.4 MB)
+remote:        Collecting click>=5.1
+remote:          Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+remote:        Collecting threadpoolctl>=2.0.0
+remote:          Downloading threadpoolctl-2.1.0-py3-none-any.whl (12 kB)
+remote:        Collecting joblib>=0.11
+remote:          Downloading joblib-0.15.1-py3-none-any.whl (298 kB)
+remote:        Collecting kiwisolver>=1.0.1
+remote:          Downloading kiwisolver-1.2.0-cp36-cp36m-manylinux1_x86_64.whl (88 kB)
+remote:        Collecting python-dateutil>=2.1
+remote:          Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+remote:        Collecting cycler>=0.10
+remote:          Downloading cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+remote:        Collecting pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1
+remote:          Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+remote:        Collecting pytz>=2017.2
+remote:          Downloading pytz-2020.1-py2.py3-none-any.whl (510 kB)
+remote:        Collecting regex
+remote:          Downloading regex-2020.6.8-cp36-cp36m-manylinux2010_x86_64.whl (660 kB)
+remote:        Collecting tqdm
+remote:          Downloading tqdm-4.46.1-py2.py3-none-any.whl (63 kB)
+remote:        Collecting six>=1.5
+remote:          Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+remote:        Building wheels for collected packages: nltk
+remote:          Building wheel for nltk (setup.py): started
+remote:          Building wheel for nltk (setup.py): finished with status 'done'
+remote:          Created wheel for nltk: filename=nltk-3.5-py3-none-any.whl size=1434676 sha256=20b816ca934cf5ae0d3ed2b97f562e665a27c5eb28ee40bb85e640282ebf219f
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-e89x1z_i/wheels/de/5e/42/64abaeca668161c3e2cecc24f864a8fc421e3d07a104fc8a51
+remote:        Successfully built nltk
+remote:        Installing collected packages: itsdangerous, Werkzeug, click, MarkupSafe, Jinja2, Flask, gunicorn, numpy, scipy, threadpoolctl, joblib, scikit-learn, kiwisolver, six, python-
+dateutil, cycler, pyparsing, matplotlib, pytz, pandas, regex, tqdm, nltk
+remote:        Successfully installed Flask-1.1.1 Jinja2-2.10.1 MarkupSafe-1.1.1 Werkzeug-0.15.5 click-7.1.2 cycler-0.10.0 gunicorn-19.9.0 itsdangerous-1.1.0 joblib-0.15.1 kiwisolver-1.2.0
+matplotlib-3.2.1 nltk-3.5 numpy-1.18.5 pandas-1.0.4 pyparsing-2.4.7 python-dateutil-2.8.1 pytz-2020.1 regex-2020.6.8 scikit-learn-0.23.1 scipy-1.4.1 six-1.15.0 threadpoolctl-2.1.0 tqdm-4.46
+.1
+remote: -----> Downloading NLTK corpora…
+remote:  !     'nltk.txt' not found, not downloading any corpora
+remote:  !     Learn more: https://devcenter.heroku.com/articles/python-nltk
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 159.7M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://movie-app-gen.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/movie-app-gen.git
+ * [new branch]      master -> master
+
+C:\Users\Ramdhan\PycharmProjects\Movies>heroku open
+
+C:\Users\Ramdhan\PycharmProjects\Movies>
